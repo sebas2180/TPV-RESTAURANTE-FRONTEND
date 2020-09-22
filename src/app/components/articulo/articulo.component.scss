@@ -1,0 +1,16 @@
+.product img{
+    height: 150px;
+    object-fit: contain;
+  }
+  .art{
+    display: flex;
+    justify-content: center;
+  }
+  .product{
+    display: flex;
+    flex-direction: column;
+    min-width: 380px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px; /* same as fxLayoutGap for even distribution */
+  }

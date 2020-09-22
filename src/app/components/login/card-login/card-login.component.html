@@ -1,0 +1,24 @@
+
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title class="title">
+            <span>Ingrese sesion</span>
+        </mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="this.form" (ngSubmit)="this.OnSubmit()">
+        <mat-card-content class="content">
+                <mat-form-field class="email" appearance="outline" name="email">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="text" formControlName="email">
+                </mat-form-field>
+    
+                <mat-form-field class="password" appearance="outline" name="password">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password">
+                </mat-form-field>      
+        </mat-card-content>
+        <mat-card-footer>
+            <button mat-raised-button color="primary">Entrar</button>
+        </mat-card-footer>
+</form>
+</mat-card>

@@ -1,0 +1,69 @@
+
+.box-titulo{
+    display: flex;
+    min-width: 100%;
+    justify-content: center;
+    text-align: center;
+    height: 150px;
+
+}
+.titulo{
+    padding-top: 50px;
+    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5, -12px 10px 7px rgba(206,89,55,0.86);
+    color: #115D72;
+    background: #ffffff;
+    border-top: 5px solid #0D05A4;
+    border-radius: 15px 8px 4px 5px;
+   
+    width: 100%;
+}
+h1{
+    font-size: 3em;
+}
+.full-central{
+    position: relative;
+}        
+app-card-login{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.box-registrar{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+
+}
+.button-registro{
+    width: 100%;
+    height: 100%;
+}
+
+@media(max-width:768px){
+    .full-central{
+        width: 50%;
+        margin-left: 25%;
+    }
+}
+@media(min-width:768px){
+    .full-central{
+       
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }    
+    app-card-login{
+        width: 60%;
+    }
+    .box-registrar{
+        justify-content: center;
+        width:30%;
+        text-align: center;
+        align-content: center;
+    
+    }
+}

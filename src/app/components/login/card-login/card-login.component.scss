@@ -1,0 +1,22 @@
+
+.card{
+    display: flex;
+    width: 100%;
+}
+    .title{
+        text-align: center;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+    .mat-form-field{
+            width: 100%;
+    }
+     button{
+        position: relative;
+        width: 80%;
+    }
+    mat-card-footer{
+        padding: 8px 8px 8px 8px ;
+    }
