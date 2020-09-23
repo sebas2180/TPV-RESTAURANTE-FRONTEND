@@ -1,8 +1,8 @@
 <mat-card class="card">
     <mat-card-content>
-        <span>{{this.pagina_actual}}</span>/<span>{{this.pages}}</span>
+        <span>{{ this.countSelect$  | async }}</span>/<span>{{this.pages}}</span>
         <div class="buttons">
-            <button mat-raised-button color="primary" (click)="this.anterior()" [disabled]="this.pagina_actual===1 ">
+            <button mat-raised-button color="primary" (click)="this.anterior()"  >
                 Anterior
             </button>
             <button mat-raised-button color="primary" (click)="this.siguiente()">

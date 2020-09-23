@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { delay, map } from 'rxjs/operators';
 import { ArticuloModule } from 'src/app/models/articulo/articulo.module';
 import {  environment } from '../../../environments/environment.prod';
 @Injectable({
@@ -19,8 +19,9 @@ export class ArticuloService {
    
     }
 
-    getArticulos(): Observable<any> {
-      return this.http.get(`${environment.rutaBackEnd}articulo/listAll`);
+    getArticulos()  {
+      return this.http.get<ArticuloModule[]>(`${environment.rutaBackEnd}articulo/listAll`) .pipe(
+        delay(500));
     }
 
     add(): Observable<any> {

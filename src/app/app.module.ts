@@ -34,6 +34,15 @@ import { CardLoginComponent } from './components/login/card-login/card-login.com
 import { RegistrarComponent } from './components/login/registrar/registrar.component';
 import { ListaArticulosComponent } from './components/lista-articulos/lista-articulos.component';
 import { PaginatorComponent } from './components/lista-articulos/paginator/paginator.component';
+
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import {  StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { articulosReducer } from './stores/reducers/articulo.reducer';
+import { contReducer } from 'src/app/stores/reducers/contador.reducer';
  
 @NgModule({
   declarations: [
@@ -68,7 +77,9 @@ import { PaginatorComponent } from './components/lista-articulos/paginator/pagin
     MatSortModule,
     MatSelectModule,
     LayoutModule,
-    MatListModule
+    MatListModule,
+    StoreModule.forRoot({count: contReducer,articulo : articulosReducer} as any),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [ ArticuloService, UsuarioService, CanActivateService],
   bootstrap: [AppComponent]
