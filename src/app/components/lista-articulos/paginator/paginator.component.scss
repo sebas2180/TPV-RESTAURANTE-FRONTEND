@@ -1,7 +1,20 @@
 .card{
     display: flex;
-    width: 100%;
+    width: 67%;
     justify-content: space-around;
- 
+    left: 8%;
     flex-direction: row;
 }
+.content{
+    width: 100%;
+}
+ .buttons{
+    display: flex;
+
+    width: 100%;
+    justify-content: space-around;
+ }
+ .info{
+     font-weight: bold;
+     font-size: 1rem;
+ }

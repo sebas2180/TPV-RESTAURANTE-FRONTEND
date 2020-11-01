@@ -4,3 +4,11 @@
   width: 100%;
   text-align: center;
 }
+.router-outlet{
+  position: absolute;
+}
+.app-pie-pagina{
+  display: flex;
+  position: absolute;
+  margin-top: 300px;
+}

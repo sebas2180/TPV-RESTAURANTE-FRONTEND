@@ -15,8 +15,10 @@ enum articuloTypes{
  
 
 
-export class getArticulos  implements Action  {
+export class GET_ARTICULOS  implements Action  {
+    
     readonly type = articulosTypes.GET_Articulos;
+    constructor(){}
 }
 export class GETArticulosSuccess  implements Action  {
     readonly type= articulosTypes.GET_Articulos_SUCCESS ;
@@ -29,4 +31,4 @@ export class getArticulosError implements Action  {
     }
 }
 
-export type Actionn = getArticulos  | getArticulosError |  GETArticulosSuccess ;
+export type Actionn = GET_ARTICULOS  | getArticulosError |  GETArticulosSuccess ;

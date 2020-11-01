@@ -10,7 +10,7 @@ export interface State{
 
 }
 const initialState: State = {
-    articulos:null,
+    articulos: [],
     loading: false,
     loaded: false
 }
@@ -19,7 +19,8 @@ const initialState: State = {
 export function articulosReducer (state =  initialState, action: articuloActions.Actionn) : State   {
         switch(action.type){
             case articuloActions.articulosTypes.GET_Articulos_SUCCESS:
-              {  return {
+              {  
+                      return {
                     ...state,
                     articulos: action.articulos,
                     loading: false,
@@ -32,6 +33,7 @@ export function articulosReducer (state =  initialState, action: articuloActions
                 loaded: false
                 };}
             case articuloActions.articulosTypes.GET_Articulos:
+                // console.log('GET_Articulos');
               {  return {
                     ...state,
                     loading: true,

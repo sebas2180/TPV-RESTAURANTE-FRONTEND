@@ -1,0 +1,10 @@
+<div  *ngIf="this.articulosOk" class="container_articulos" >
+   
+        <div *ngFor="let art of lista_articulos ">
+
+                <div class="articuloo"> 
+                    <app-articulo [articulo]="art"></app-articulo>
+                </div>
+            </div>
+
+</div>

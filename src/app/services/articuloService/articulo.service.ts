@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
@@ -20,11 +20,15 @@ export class ArticuloService {
     }
 
     getArticulos()  {
-      return this.http.get<ArticuloModule[]>(`${environment.rutaBackEnd}articulo/listAll`) .pipe(
-        delay(500));
+      // console.log('EJECUTANDO SERVICE');
+      return this.http.get<ArticuloModule[]>(`${environment.rutaBackEnd}articulo/listAll`)
+      
     }
 
     add(): Observable<any> {
       return this.http.get(`${environment.rutaBackEnd}articulo/add`);
+    }
+    getArticulosForIdCategoria(id_categoria)  {
+      return this.http.get<ArticuloModule[]>(`${environment.rutaBackEnd}articulo/categoria/${id_categoria}`)   
     }
 }

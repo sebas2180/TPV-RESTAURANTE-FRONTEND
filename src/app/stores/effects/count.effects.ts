@@ -11,13 +11,7 @@ export class countEffects{
     constructor(private ErrorService: ErrorService,
                 private readonly actions$: Actions){}
 
-    // @Effect({ dispatch: false })
-    // public fetchProductsFail$ = this.actions$.pipe(
-    //     ofType<countActions.IncrementCountFail>(countActions.countActions.incFail),
-    //     map((action: countActions.IncrementCountFail) => action.payload),
-    //     tap((error: ErrorData) => this.ErrorService.displayError(error)),
-    // );
-
+ 
  
 
 }

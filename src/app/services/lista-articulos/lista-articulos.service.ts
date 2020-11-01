@@ -7,7 +7,7 @@ import { ArticuloModule } from 'src/app/models/articulo/articulo.module';
 export class ListaArticulosService {
 
   private articulos : ArticuloModule[] ;
-  private articulos_filtrados : ArticuloModule[] ;
+   articulos_filtrados : ArticuloModule[] ;
   private cantidad_pagina: number ;
   private desde :number;
   private pagina: number ;
@@ -26,7 +26,7 @@ export class ListaArticulosService {
     }
 
     public setdesde(desde: number) {
-        this.desde = desde-1;
+        this.desde = desde;
     }
 
     public getpagina(): number {

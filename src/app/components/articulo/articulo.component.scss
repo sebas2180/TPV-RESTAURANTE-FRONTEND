@@ -1,16 +1,23 @@
 .product img{
-    height: 150px;
+   height: 100px;
+    width: 100%;
     object-fit: contain;
+    
   }
-  .art{
-    display: flex;
-    justify-content: center;
-  }
+
   .product{
     display: flex;
-    flex-direction: column;
-    min-width: 380px;
-    width: 100%;
+   // flex-direction: row;
+   min-width: 240px;
+   width: 100%;
+    
     text-align: center;
-    margin-bottom: 20px; /* same as fxLayoutGap for even distribution */
+     margin-bottom: 10px; /* same as fxLayoutGap for even distribution */
+  }
+  .actions{
+    display: flex;
+   // margin-left: 10%;
+    //width: 80%;
+    justify-content: space-between;
+ 
   }

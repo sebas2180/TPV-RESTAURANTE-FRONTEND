@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,14 +35,28 @@ import { RegistrarComponent } from './components/login/registrar/registrar.compo
 import { ListaArticulosComponent } from './components/lista-articulos/lista-articulos.component';
 import { PaginatorComponent } from './components/lista-articulos/paginator/paginator.component';
 
-import { StoreModule } from '@ngrx/store';
+import { Store, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import {  StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { articulosReducer } from './stores/reducers/articulo.reducer';
+import { articulosReducer, State } from './stores/reducers/articulo.reducer';
 import { contReducer } from 'src/app/stores/reducers/contador.reducer';
+import { articulosEffects } from './stores/effects/articulo.effects';
+import { effects } from './stores/effects';
+import { GETArticulosSuccess, GET_ARTICULOS } from './stores/actions/articulo.actions';
+import { PiePaginaComponent } from './components/pie-pagina/pie-pagina.component';
+import { ListaCategoriasComponent } from './components/lista-categorias/lista-categorias.component';
+import { CateogiraComponent } from './components/lista-categorias/cateogira/cateogira.component';
+import { categoriasReducer } from './stores/reducers/categoria.reducer';
+import { categoriaEffects } from './stores/effects/categoria.effects';
+import { ListaMesasComponent } from './components/lista-mesas/lista-mesas.component';
+import { MesaComponent } from './components/lista-mesas/mesa/mesa.component';
+import { DetalleMesaComponent } from './components/lista-mesas/detalle-mesa/detalle-mesa.component';
+import { ListaArticuloComponent } from './components/lista-articulo/lista-articulo.component';
+import { PanelCatalogoComponent } from './components/panel-catalogo/panel-catalogo.component';
+ 
  
 @NgModule({
   declarations: [
@@ -55,7 +69,15 @@ import { contReducer } from 'src/app/stores/reducers/contador.reducer';
     CardLoginComponent,
     RegistrarComponent,
     ListaArticulosComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    PiePaginaComponent,
+    ListaCategoriasComponent,
+    CateogiraComponent,
+    ListaMesasComponent,
+    MesaComponent,
+    DetalleMesaComponent,
+    ListaArticuloComponent,
+    PanelCatalogoComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -78,10 +100,22 @@ import { contReducer } from 'src/app/stores/reducers/contador.reducer';
     MatSelectModule,
     LayoutModule,
     MatListModule,
-    StoreModule.forRoot({count: contReducer,articulo : articulosReducer} as any),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreModule.forRoot({categoria: categoriasReducer,count: contReducer,articulo : articulosReducer} as any, { runtimeChecks: { strictStateImmutability: true, strictActionImmutability: true } }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot( [articulosEffects,categoriaEffects] )
   ],
-  providers: [ ArticuloService, UsuarioService, CanActivateService],
+  providers: [ ArticuloService, UsuarioService, CanActivateService,
+    //{
+      // provide: APP_INITIALIZER,
+      // useFactory: (store: Store<State>) => {
+      //   return () => {
+      //     store.dispatch(new GET_ARTICULOS());
+      //   };
+      // },
+      // multi: true,
+      // deps: [Store]
+    //}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Action, select, Store } from '@ngrx/store';
+import {  Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { take } from 'rxjs/operators';
-import { IncrementCount , DecrementCount}   from '../../../stores/actions/contador.actions';
-import  * as contadorReducer  from '../../../stores/reducers/contador.reducer';
-import  * as countSelect from '../../../stores/selectors/contador.select';
+
+import { IncrementCount , DecrementCount ,Pages}   from '../../../stores/actions/contador.actions';
+import  { pages,getCount,getCountState}  from '../../../stores/selectors/contador.select';
  
 
 @Component({
@@ -14,44 +13,40 @@ import  * as countSelect from '../../../stores/selectors/contador.select';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PaginatorComponent implements OnInit {
-  @Output() emitFilter   = new EventEmitter();
   countSelect$: Observable<number>;
-
-  @Input() cantidad_por_pagina : number ;
-  @Input() cantidad_elementos : number ;
-  pages : number = 1;
+  pages$: Observable<number>;
+  pages : number = 0;
+  count : number = 0;
 
   constructor( private store: Store) { }
   ngOnInit(): void {
-    // this.count$ = this.store.pipe(select('count')) ;
-    this.countSelect$ = this.store.select<number>(countSelect.getCount);
-
-    if( this.cantidad_elementos >= this.cantidad_por_pagina) {
-      this.pages = Math.ceil(this.cantidad_elementos / this.cantidad_por_pagina);
-    }
-  }
-  anterior():void  {
+    this.countSelect$ = this.store.select<number>(getCount);
+    this.pages$ = this.store.select<number>(pages);
+    this.pages$.subscribe(
+      pagina => {
+        this.pages = pagina;
+      }
+    )
     this.countSelect$.subscribe(
       res => { 
-        if( res > 1){
-          this.store.dispatch(new DecrementCount());
-          this.emitFilter.emit(-1);
-        }
+        this.count = res;
       }
-      
-    ).unsubscribe();
+    );
+  }
+  anterior():void  {
+ 
+        if( this.count > 1){
+          this.store.dispatch(new DecrementCount());
+          this.pages$ = this.store.select<number>(pages);
+        }
  
   }
   siguiente():void {
-    this.countSelect$.subscribe(
-      res => { 
-        if( res   < this.pages){
-
-           this.store.dispatch(new IncrementCount() );
-        this.emitFilter.emit(1);
-        }
+      if( this.count   < this.pages){
+         this.store.dispatch(new IncrementCount() );
+         this.pages$ = this.store.select<number>(pages);
       }
-    ).unsubscribe();
+ 
   }
 
 }

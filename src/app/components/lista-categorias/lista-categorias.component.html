@@ -1,0 +1,10 @@
+<!-- <app-categoria></app-categoria> -->
+
+<div class="row row_catgorias" >
+    <div  *ngFor="let category of lista_categorias" >
+        <app-categoria     [categoria] = "category" (categoria_seleccionada)="mostrar_categoria($event)">
+            
+        </app-categoria>
+    </div>
+</div>
+

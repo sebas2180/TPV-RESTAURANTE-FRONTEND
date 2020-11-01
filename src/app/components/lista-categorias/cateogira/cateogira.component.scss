@@ -1,0 +1,81 @@
+
+.texto-encima{
+    background-color: rgba(255,255,255,.8);
+    display: block;
+    position: absolute;
+    bottom: 40%;
+    left: 30%;
+    text-align: center;
+    padding: 5px;
+    width: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.texto{
+    display: block;
+  position: relative;	
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+}
+.content{
+    display: flex  !important;
+    justify-items: center;
+    justify-content: center;
+
+}
+.card:hover{
+    background-color: rgb(63, 136, 170);
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 320px) { 
+    .card{
+        width:95%;
+        margin: 10px;
+        }
+    .image{
+        width: 320px;
+
+        height: 180px;
+    }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+    .card{
+        width: 700px;
+        margin: 10px;
+    }
+    .image{
+        width: 670px;
+        height: 200px;
+        
+    }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+    .card{
+        width:550px;
+        min-width: 400px;
+    }
+    .image{
+        width: 500px;
+        height: 300px;
+    }
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+        .card{
+        width: 500px;
+        min-width: 370px;
+
+    }
+    .image{
+    //   width: 100%;
+        width: 450px;
+        height: 300px;
+    }
+ }

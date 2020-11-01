@@ -1,14 +1,17 @@
 <mat-card class="card">
-    <mat-card-content>
-        <span>{{ this.countSelect$  | async }}</span>/<span>{{this.pages}}</span>
+    <mat-card-content class="content">
         <div class="buttons">
             <button mat-raised-button color="primary" (click)="this.anterior()"  >
                 Anterior
             </button>
+            <div class="info">
+                <span>{{ this.countSelect$  | async }}</span>/<span>{{this.pages$ | async}}</span>
+            </div>
+
             <button mat-raised-button color="primary" (click)="this.siguiente()">
                 Siguiente
             </button>
         </div>
     </mat-card-content>
-
+ 
 </mat-card>

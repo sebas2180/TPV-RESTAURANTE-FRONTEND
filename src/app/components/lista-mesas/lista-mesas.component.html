@@ -1,0 +1,15 @@
+ 
+<mat-card class="card-title">
+    <mat-card-content class="card-content">
+        <h2>MESAS ABIERTAS</h2>
+    </mat-card-content>
+</mat-card>
+
+<div class="row">
+    <div *ngFor="let mesa  of this.mesas">
+        <div class="mesa col-lg-6 col-md-6 col-sm-4 col-xs-4">
+            <mesa  [mesa] = "mesa">
+            </mesa>  
+        </div>               
+    </div> 
+</div>

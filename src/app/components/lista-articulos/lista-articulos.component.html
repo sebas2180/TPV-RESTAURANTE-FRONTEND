@@ -1,11 +1,13 @@
 <div  *ngIf="this.articulosOk" class="container_articulos" > 
-                                <app-paginator  [cantidad_elementos]= "this.ListaArticulosService.articulosLength()" 
-                                [cantidad_por_pagina] = "this.ListaArticulosService.getcantidadpagina()"
-                                (tenes_que_agarrar)="this.ListaArticulosService.setdesde($event)" 
-                                (emitFilter)="filter($event)">
-    </app-paginator>
+                                <app-paginator   
+                                
+                               >
+</app-paginator>
 
     <div class="row row_articulos">
-        <app-articulo  *ngFor="let art of  this.ListaArticulosService.getArticulos_filtrados()" [articulo]="art"></app-articulo>
+        <app-articulo  *ngFor="let art of this.ListaArticulosService.articulos_filtrados " [articulo]="art"></app-articulo>
     </div>
 </div>
+
+
+<!-- this.ListaArticulosService.getArticulos_filtrados() -->

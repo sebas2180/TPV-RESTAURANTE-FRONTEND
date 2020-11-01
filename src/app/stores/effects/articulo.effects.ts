@@ -1,24 +1,28 @@
 
 import { Injectable } from '@angular/core';
 import { Effect, ofType } from '@ngrx/effects';
-import { Action } from '@ngrx/store';
+import { of } from 'rxjs';
 import {  Actions } from '@ngrx/effects';
-import { Observable } from 'rxjs';
 import { ArticuloService } from 'src/app/services/articuloService/articulo.service';
-import * as articuloActions from '../actions/articulo.actions';
-import { GETArticulosSuccess,getArticulos,getArticulosError } from '../actions/articulo.actions';
+import {GETArticulosSuccess , getArticulosError , GET_ARTICULOS , articulosTypes} from '../actions/articulo.actions';
 import { catchError, map, switchMap } from 'rxjs/operators';
+import { ArticuloModule } from 'src/app/models/articulo/articulo.module';
 
 @Injectable()
 export class articulosEffects {
 
-    constructor( private Actions$ : Actions, private articuloService : ArticuloService ){}
+    constructor( private Actions$ : Actions, 
+        private articuloService : ArticuloService ){}
 
-    @Effect()
-    getAllArticulos$ = this.Actions$.pipe(
-        ofType(articuloActions.getArticulos),
-        switchMap(() => this.articuloService.getArticulos()),
-        map(title => new GETArticulosSuccess(title)),
-        catchError((err) => [new getArticulosError(err)])
+    @Effect() getAllArticulos$ = this.Actions$.pipe(
+        ofType<GET_ARTICULOS>(articulosTypes.GET_Articulos),
+        switchMap(
+            () => this.articuloService.getArticulos().pipe(
+                map((articulos: ArticuloModule[]) => 
+            {return new GETArticulosSuccess(articulos)
+            })
+        )),
+       
+        catchError(error => of(new getArticulosError(error)))
     );
 }
