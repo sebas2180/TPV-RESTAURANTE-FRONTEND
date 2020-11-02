@@ -1,10 +1,17 @@
-<div  *ngIf="this.articulosOk" class="container_articulos" >
-   
-        <div *ngFor="let art of lista_articulos ">
-
-                <div class="articuloo"> 
-                    <app-articulo [articulo]="art"></app-articulo>
-                </div>
-            </div>
-
+<div class="barra_superior" *ngIf="this.panel_articulo==1">
+    <button mat-raised-button color="primary" class="button" (click)="volver()">volver
+    </button>
+</div>
+<div  *ngIf="this.articulosOk && this.panel_articulo == 1" class="row lista_articuloss" >  
+    <div *ngFor="let art of lista_articulos ">
+        <div class="articulo">
+            <app-articulo [articulo]="art" (agregar_articulo)="cambiar_panel($event)"></app-articulo>
+        </div>     
+    </div>
+</div>
+<div *ngIf="this.panel_articulo == 2" class="row agregar_articuloss" >
+    <div class=" col" >
+        <app-agregar-articulo [articulo_a_agregar]="this.articulo_a_agregar">
+        </app-agregar-articulo>
+    </div>
 </div>

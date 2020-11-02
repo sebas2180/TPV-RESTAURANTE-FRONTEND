@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ArticuloModule } from 'src/app/models/articulo/articulo.module';
 import { ArticuloService } from 'src/app/services/articuloService/articulo.service';
 
@@ -10,11 +10,16 @@ import { ArticuloService } from 'src/app/services/articuloService/articulo.servi
 })
 export class ArticuloComponent implements OnInit {
     @Input() articulo : ArticuloModule ;
+    @Output() agregar_articulo = new EventEmitter();
 
   constructor(public artService: ArticuloService) { }
   ngOnInit(): void {
      
 
+  }
+  agregar_producto( ) : void {
+    let datos =[ {"codigo":2,"articulo":this.articulo}]
+    this.agregar_articulo.emit(datos);
   }
 
 }

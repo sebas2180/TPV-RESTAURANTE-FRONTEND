@@ -1,70 +1,91 @@
-.title
-{
-    width: 100%;
-    text-align: center;
+.primario{
+background-color: yellow;
+padding: 15px;
 }
-.row{
-    position: relative;
-    width: 100%;
+.secundario{
+   // background-color: red;
 }
 app-panel-catalogo{
     position: relative;
     width: 100%;
 }
+barra-busqueda{
+    position: relative;
+    
+    //left: 15%;
+}
+.encabezados{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+}
+.title{
+    width: 100%;
+    text-align: center;
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 320px) { 
-
+    .detalle{
+        display: none;
+    }
+    .card_mostrar_detalle{
+        visibility: visible;
+    }
  }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
- 
+    .detalle{
+        display: none;
+    }
+    .card_mostrar_detalle{
+        visibility: visible;
+    }
  }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) { 
-    .detalle{
-        top: 30px;
-        left: 15px;
-        min-width: 600px;
-        width: 100%;
-        
-        padding-right: 20px;
-    }
-    .content{
-        min-height: 500px;
+
+    .general{
         display: flex;
-        width: 100%;
-        justify-content:space-around;
-        bottom: 0%;
+        flex-direction: row;
     }
- 
+    .primario{
+        width: 33%;
+    }
+    .secundario{
+        width: 67%;
+    }
+    .detalle{
+       display: flex;
+       flex-direction: column;
+    }
+    .card_mostrar_detalle{
+        visibility: hidden;
+    }
  }
 
-// Extra large devices (large desktops, 1200px and up)
+
 @media (min-width: 1200px) { 
-    .detalle{      
-        top: 30px;
-        left: 15px;
-        width: 100%;
-        
-        padding-right: 20px;
-        min-width: 600px;
-    }
-    .content{
-        min-height: 500px;
+    .general{
         display: flex;
-        width: 100%;
-        justify-content:space-around;
-        bottom: 0%;
+        flex-direction: row;
     }
- 
- 
+    .primario{
+        width: 28%;
+    }
+    .detalle{
+        display: flex;
+        flex-direction: column;
+        min-width:23%;
+    }
+    .card_mostrar_detalle{
+        visibility: hidden;
+    }
+    .secundario{
+        width: 72%;
+    }
  }
- .encabezados{
-     display: flex !important;
-     width: 100%;
-     justify-items: center;
-     justify-content: space-around;
- }
+
 

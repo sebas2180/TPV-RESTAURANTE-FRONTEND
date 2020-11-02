@@ -1,17 +1,16 @@
- 
+
 <mat-card   class="product">
-    <mat-card-title>{{this.articulo.id}}</mat-card-title>
-    <img class="image" mat-card-image src="https://media.gettyimages.com/photos/studio-shot-of-old-chair-picture-id152891709?s=612x612" alt="photo">
+    <mat-card-title>
+        <p class="codigo">  {{this.articulo.id}} </p>
+        <p class="categoria">{{this.articulo.categoria.categoria}}</p>
+    </mat-card-title>
     <mat-card-content>
-        <p>
-            {{this.articulo.description || 'null'}}
-        </p>
+        <p class="title">{{this.articulo.title}}</p>
+        <p> {{this.articulo.description || 'null'}}  </p>
     </mat-card-content>
     <mat-card-actions class="actions" >
-        <h3>$ {{this.articulo.price}}</h3>
-        <button> <span class="material-icons">
-                shopping_cart
-        </span> </button>
+        <button mat-raised-button color="primary" (click)="agregar_producto()"> 
+             <h3 class="precio"> $ {{this.articulo.price_neto}}</h3>  
+        </button>
     </mat-card-actions>
 </mat-card>
- 

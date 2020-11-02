@@ -1,18 +1,25 @@
-.container_articulos{
-  //display: flex !important;
+.lista_articuloss{
   position: relative;
   width: 100%;
-  padding-left: 20px;
+  justify-content: center;
+
 }
 .row_articulos{
   position: relative;
-  
- 
 }
-.articuloo{
-  //display: flex !important;
+.articulo{
   position: relative;
-   // justify-content: center;
-    background-color: yellow;    
-    //width: 100%;
-  }
+  margin-left: 10px;
+}
+.agregar_articuloss{
+  display: flex;
+  width: 100%;
+  justify-items: center;
+}
+// app-agregar-articulo {
+//   display: flex;
+//   width: 100%;
+//   background-color: cornflowerblue;
+// }
+
+ 

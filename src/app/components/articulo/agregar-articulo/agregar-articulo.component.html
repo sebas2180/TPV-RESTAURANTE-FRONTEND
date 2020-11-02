@@ -1,0 +1,38 @@
+ 
+    <mat-card class="card_agregar_articulo">
+        <mat-card-title>
+            
+           <p> {{this.articulo_a_agregar.title}}</p>
+           <button mat-icon-button color="warn"  class="button_exit"  >
+            <span class="material-icons">    clear    </span>
+        </button>
+        </mat-card-title>
+        <mat-card-content>
+            <div class="informacion">
+                <p>ID : {{this.articulo_a_agregar.id}}</p>
+                <p>Precio unitario : {{this.articulo_a_agregar.price_neto}}</p>
+            </div>
+            <form  [formGroup]="this.form">
+                <mat-form-field class="comentario" appearance="outline" name="comentario">
+                    <mat-label>comentario</mat-label>
+                    <input matInput  maxlength="256" placeholder="..."  class="comentario">
+                </mat-form-field>
+                <div class="div_cantidad">
+                    <button mat-raised-button color="primary" class="button_cantidad" (click)="cambiar_cantidad(-1)">
+                        <span class="material-icons"> remove </span>
+                    </button>
+                    <mat-form-field class="cantidad" appearance="outline" name="cantidad" class="cantidad">
+                        <mat-label>cantidad</mat-label>
+                        <input matInput formControlName="cantidad" type="number" min="0"  readonly="readonly" name="cantidad">
+                    </mat-form-field>
+                    <button mat-raised-button color="primary"  class="button_cantidad" (click)="cambiar_cantidad(1)">
+                        <span class="material-icons">    add    </span>
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+        <mat-card-footer>
+            <button mat-raised-button color="primary" (click)="this.OnSubmit()" class="button_agregar"> AGREGAR </button>
+        </mat-card-footer>
+    </mat-card>
+ 

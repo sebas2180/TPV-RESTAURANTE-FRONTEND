@@ -56,6 +56,8 @@ import { MesaComponent } from './components/lista-mesas/mesa/mesa.component';
 import { DetalleMesaComponent } from './components/lista-mesas/detalle-mesa/detalle-mesa.component';
 import { ListaArticuloComponent } from './components/lista-articulo/lista-articulo.component';
 import { PanelCatalogoComponent } from './components/panel-catalogo/panel-catalogo.component';
+import { BarraBusquedaComponent } from './components/lista-mesas/detalle-mesa/barra-busqueda/barra-busqueda.component';
+import { AgregarArticuloComponent } from './components/articulo/agregar-articulo/agregar-articulo.component';
  
  
 @NgModule({
@@ -77,7 +79,9 @@ import { PanelCatalogoComponent } from './components/panel-catalogo/panel-catalo
     MesaComponent,
     DetalleMesaComponent,
     ListaArticuloComponent,
-    PanelCatalogoComponent
+    PanelCatalogoComponent,
+    BarraBusquedaComponent,
+    AgregarArticuloComponent
   ],
   imports: [
     ReactiveFormsModule,

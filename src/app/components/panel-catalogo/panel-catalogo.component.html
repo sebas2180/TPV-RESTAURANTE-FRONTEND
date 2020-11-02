@@ -2,15 +2,8 @@
     <app-lista-categorias *ngIf="panel == 1" (categoria_seleccionada)="mostrar_categoria($event)">
     </app-lista-categorias>
     
-    <div class="row row_articulos" *ngIf="panel == 2">
-        <app-lista-articulo [id_categoria]="id_categoria_seleccionada">
+    <div class="row_articulos" *ngIf="panel == 2">
+        <app-lista-articulo [id_categoria]="id_categoria_seleccionada" (volver_emit)="this.panel = 1">
         </app-lista-articulo>
     </div>
-    
-    <div *ngIf="this.panel==2">
-        <button mat-raised-button color="primary"  (click)="volver()">volver
-    
-        </button>
-    </div>
-    
 </div>

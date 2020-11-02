@@ -1,23 +1,45 @@
-.product img{
-   height: 100px;
-    width: 100%;
-    object-fit: contain;
-    
-  }
+// .product img{
+//    height: 70px;
+//     width: 70%;
+//     object-fit: contain;
+//   }
+mat-card-title{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  font-weight: normal !important;
+  font-size: 0.8rem !important;
+}
 
+
+.title{
+  color: blue;
+  font-weight: bold;
+  font-size: 1.4rem !important;
+}
   .product{
     display: flex;
-   // flex-direction: row;
-   min-width: 240px;
-   width: 100%;
-    
-    text-align: center;
+    flex-direction: column;
+    //min-width: 200px;
+    width: 95%;
+    left: 2.5%;
+     text-align: center;
      margin-bottom: 10px; /* same as fxLayoutGap for even distribution */
   }
   .actions{
-    display: flex;
-   // margin-left: 10%;
-    //width: 80%;
-    justify-content: space-between;
- 
+    position: relative;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
+  button{
+    width: 110%;
+  }
+  .precio{
+    text-align: center;
+  }
+@media(max-width:1592px){
+  .product{
+  width: 250px;
+  }
+}

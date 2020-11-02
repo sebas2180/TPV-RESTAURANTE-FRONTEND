@@ -1,4 +1,19 @@
 .principal{
     position: relative;
     width: 100%;
+    left: 15px;
+    background-color: green;
+}
+.barra_superior{
+   display: flex;
+   flex-direction: column;
+   margin: 5px;
+   width: 100%;
+}
+.button{
+    width: 160px;
+}
+.row_articulos{
+    position: relative;
+    width: 100%;
 }

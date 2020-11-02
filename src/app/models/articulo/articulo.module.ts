@@ -1,13 +1,14 @@
+import { CategoriaModule } from '../categoria/categoria.module';
 
 export interface ArticuloModule {
 
-  title : string ;
+    title : string ;
    description : string;
    created_at : Date;
-   price : number;
+   price_neto : number;
    id : number;
    id_usuario : number;
-   category: string;
+   categoria: CategoriaModule;
    status: string;
 
 }

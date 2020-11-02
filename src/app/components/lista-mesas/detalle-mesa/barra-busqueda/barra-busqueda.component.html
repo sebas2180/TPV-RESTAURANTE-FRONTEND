@@ -1,0 +1,8 @@
+<div class="div_busqueda">
+    <form [formGroup]="this.form" (ngSubmit)="this.OnSubmit()">
+                <mat-form-field class="busqueda" appearance="outline" name="busqueda">
+                    <mat-label>Buscar articulo</mat-label>
+                    <input matInput type="text" formControlName="busqueda">
+        </mat-form-field>
+    </form>
+</div>

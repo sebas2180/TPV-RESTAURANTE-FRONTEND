@@ -11,5 +11,7 @@ export class DetalleMesaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  mostrar_factura() : void {
+    
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ArticuloModule } from 'src/app/models/articulo/articulo.module';
 import { CategoriaModule } from 'src/app/models/categoria/categoria.module';
 import { ArticuloService } from 'src/app/services/articuloService/articulo.service';
@@ -11,8 +11,11 @@ import { ArticuloService } from 'src/app/services/articuloService/articulo.servi
 export class ListaArticuloComponent implements OnInit {
 
   @Input() id_categoria : number;
+  @Output() volver_emit = new EventEmitter();
   lista_articulos: ArticuloModule[];
+  articulo_a_agregar : ArticuloModule;
   articulosOk: boolean = false;
+  panel_articulo : number = 1;
   constructor(private articuloService: ArticuloService) { }
 
   ngOnInit(): void {
@@ -26,5 +29,13 @@ export class ListaArticuloComponent implements OnInit {
       }
     )
   }
+  cambiar_panel(e) {
+    this.articulo_a_agregar = e[0]['articulo'];
+    console.log(e[0]['codigo'] )
+    this.panel_articulo =e[0]['codigo'];
+  }
 
+  volver() : void {
+    this.volver_emit.emit(1);
+  }
 }

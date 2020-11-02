@@ -19,12 +19,4 @@ export class PanelCatalogoComponent implements OnInit {
     
 
   }
-  volver() {
-    if(this.panel== 1) {
-      this.panel= 2
-    } else {
-      this.panel = 1;
-    }
-  }
-
 }

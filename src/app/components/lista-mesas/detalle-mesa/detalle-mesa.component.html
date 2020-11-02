@@ -1,7 +1,6 @@
 <hr>
-<div class="row">
- 
-    <div class="  col-lg-3 col-md-3 col-sm-12 col-xs-12">
+<div class="general">
+    <div class="primario">
         <mat-card class="detalle">
             <mat-card-title>
                 <h2 class="title"> Detalle consumos</h2>
@@ -20,10 +19,16 @@
                 <button mat-raised-button color="warn"> CANCELAR MESA</button>
             </mat-card-footer>
         </mat-card>
+        <mat-card  class="card_mostrar_detalle" (click)="mostrar_factura()">
+            <mat-card-content >
+                <h3>MOSTRAR DETALLE MESA</h3>
+            </mat-card-content>
+        </mat-card>
+        
     </div>
-    
-    <div class="art col-lg-8 col-md-8    col-sm-12 col-xs-12">
-        <app-panel-catalogo></app-panel-catalogo>
+    <div class="secundario">
+        <barra-busqueda></barra-busqueda>
+        <app-panel-catalogo ></app-panel-catalogo>
     </div>
 </div>
  

@@ -35,21 +35,21 @@
         margin: 10px;
         }
     .image{
-        width: 320px;
+        width: 280px;
 
-        height: 180px;
+        height: 150px;
     }
  }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
     .card{
-        width: 700px;
+        width: 600px;
         margin: 10px;
     }
     .image{
-        width: 670px;
-        height: 200px;
+        width: 570px;
+        height: 300px;
         
     }
  }
@@ -57,25 +57,25 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) { 
     .card{
-        width:550px;
-        min-width: 400px;
+        width:400px;
+        min-width: 270px;
     }
     .image{
-        width: 500px;
-        height: 300px;
+        width: 380px;
+        height: 260px;
     }
  }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { 
         .card{
-        width: 500px;
-        min-width: 370px;
+        width: 400px;
+        min-width: 270px;
 
     }
     .image{
     //   width: 100%;
-        width: 450px;
-        height: 300px;
+        width: 380px;
+        height: 260px;
     }
  }
