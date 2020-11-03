@@ -9,7 +9,7 @@ import { ArticuloService } from 'src/app/services/articuloService/articulo.servi
   styleUrls: ['./lista-articulo.component.scss']
 })
 export class ListaArticuloComponent implements OnInit {
-
+  @Input() numero_mesa: number;
   @Input() id_categoria : number;
   @Output() volver_emit = new EventEmitter();
   lista_articulos: ArticuloModule[];

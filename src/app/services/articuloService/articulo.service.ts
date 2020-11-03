@@ -31,4 +31,5 @@ export class ArticuloService {
     getArticulosForIdCategoria(id_categoria)  {
       return this.http.get<ArticuloModule[]>(`${environment.rutaBackEnd}articulo/categoria/${id_categoria}`)   
     }
+   
 }

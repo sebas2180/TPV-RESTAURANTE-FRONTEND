@@ -1,0 +1,43 @@
+
+.title{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+.footer{
+    display: flex;
+    background-color: aqua;
+    justify-content: space-between;
+     
+}
+button{
+    width: 50%;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 320px) { 
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+    .detalle{
+       display: flex;
+       flex-direction: column;
+    }
+ }
+
+
+@media (min-width: 1200px) { 
+    .detalle{
+        display: flex;
+        flex-direction: column;
+        min-width:23%;
+    }
+ }
+
+

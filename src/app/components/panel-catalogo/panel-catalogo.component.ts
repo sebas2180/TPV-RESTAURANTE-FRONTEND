@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-panel-catalogo',
@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./panel-catalogo.component.scss']
 })
 export class PanelCatalogoComponent implements OnInit {
+  @Input() numero_mesa : number;
   panel : number = 1;
   id_categoria_seleccionada : number;
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }

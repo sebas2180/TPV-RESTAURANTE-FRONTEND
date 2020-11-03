@@ -1,0 +1,24 @@
+
+<mat-card class="detalle">
+    <mat-card-title class="title">
+        <h2  > Detalle consumos</h2>
+        <h2>Numero mesa :{{numero_mesa}}</h2>
+    </mat-card-title>
+    <mat-card-content class="content">
+        <hr>
+        <app-lista-items [items]="items"></app-lista-items>
+    </mat-card-content>
+    <hr>
+    <mat-card-actions >
+        <h4>Total</h4>
+    </mat-card-actions>
+    <mat-card-footer class="footer">
+        <button mat-raised-button color="primary"> IMPRIMIR MESA</button>
+        <button mat-raised-button color="warn"> CANCELAR MESA</button>
+    </mat-card-footer>
+</mat-card>
+<!-- <mat-card  class="card_mostrar_detalle" (click)="mostrar_factura()">
+    <mat-card-content >
+        <h3>MOSTRAR DETALLE MESA</h3>
+    </mat-card-content>
+</mat-card> -->

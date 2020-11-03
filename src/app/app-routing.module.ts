@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InicioComponent } from './components/inicio/inicio.component';
-import { DetalleMesaComponent } from './components/lista-mesas/detalle-mesa/detalle-mesa.component';
+import { DetalleMesaComponent } from './components/detalle-mesa/detalle-mesa.component';
 import { ListaMesasComponent } from './components/lista-mesas/lista-mesas.component';
 import { LoginComponent } from './components/login/login.component';
 import { PerfilComponent } from './components/perfil/perfil.component';

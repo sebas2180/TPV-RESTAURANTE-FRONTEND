@@ -1,5 +1,4 @@
 .primario{
-background-color: yellow;
 padding: 15px;
 }
 .secundario{
@@ -14,23 +13,12 @@ barra-busqueda{
     
     //left: 15%;
 }
-.encabezados{
-    display: flex;
-    flex-direction: row !important;
-    justify-content: space-between;
-}
-.title{
-    width: 100%;
-    text-align: center;
-}
+
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 320px) { 
     .detalle{
         display: none;
-    }
-    .card_mostrar_detalle{
-        visibility: visible;
     }
  }
 
@@ -38,9 +26,6 @@ barra-busqueda{
 @media (min-width: 768px) { 
     .detalle{
         display: none;
-    }
-    .card_mostrar_detalle{
-        visibility: visible;
     }
  }
 
@@ -61,9 +46,6 @@ barra-busqueda{
        display: flex;
        flex-direction: column;
     }
-    .card_mostrar_detalle{
-        visibility: hidden;
-    }
  }
 
 
@@ -79,9 +61,6 @@ barra-busqueda{
         display: flex;
         flex-direction: column;
         min-width:23%;
-    }
-    .card_mostrar_detalle{
-        visibility: hidden;
     }
     .secundario{
         width: 72%;

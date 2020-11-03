@@ -11,7 +11,7 @@
 </div>
 <div *ngIf="this.panel_articulo == 2" class="row agregar_articuloss" >
     <div class=" col" >
-        <app-agregar-articulo [articulo_a_agregar]="this.articulo_a_agregar">
+        <app-agregar-articulo [numero_mesa]="numero_mesa" [articulo_a_agregar]="this.articulo_a_agregar" (cambiar_panel)="this.panel_articulo = 1">
         </app-agregar-articulo>
     </div>
 </div>

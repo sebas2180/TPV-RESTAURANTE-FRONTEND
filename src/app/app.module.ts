@@ -53,11 +53,14 @@ import { categoriasReducer } from './stores/reducers/categoria.reducer';
 import { categoriaEffects } from './stores/effects/categoria.effects';
 import { ListaMesasComponent } from './components/lista-mesas/lista-mesas.component';
 import { MesaComponent } from './components/lista-mesas/mesa/mesa.component';
-import { DetalleMesaComponent } from './components/lista-mesas/detalle-mesa/detalle-mesa.component';
+import { DetalleMesaComponent } from './components/detalle-mesa/detalle-mesa.component';
 import { ListaArticuloComponent } from './components/lista-articulo/lista-articulo.component';
 import { PanelCatalogoComponent } from './components/panel-catalogo/panel-catalogo.component';
-import { BarraBusquedaComponent } from './components/lista-mesas/detalle-mesa/barra-busqueda/barra-busqueda.component';
+import { BarraBusquedaComponent } from './components/detalle-mesa/barra-busqueda/barra-busqueda.component';
 import { AgregarArticuloComponent } from './components/articulo/agregar-articulo/agregar-articulo.component';
+import { FacturaComponent } from './components/detalle-mesa/factura/factura.component';
+import { ItemComponent } from './components/detalle-mesa/factura/lista-items/item/item.component';
+import { ListaItemsComponent } from './components/detalle-mesa/factura/lista-items/lista-items.component';
  
  
 @NgModule({
@@ -81,7 +84,10 @@ import { AgregarArticuloComponent } from './components/articulo/agregar-articulo
     ListaArticuloComponent,
     PanelCatalogoComponent,
     BarraBusquedaComponent,
-    AgregarArticuloComponent
+    AgregarArticuloComponent,
+    FacturaComponent,
+    ItemComponent,
+    ListaItemsComponent
   ],
   imports: [
     ReactiveFormsModule,

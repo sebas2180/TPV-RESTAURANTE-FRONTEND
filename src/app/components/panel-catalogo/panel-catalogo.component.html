@@ -3,7 +3,7 @@
     </app-lista-categorias>
     
     <div class="row_articulos" *ngIf="panel == 2">
-        <app-lista-articulo [id_categoria]="id_categoria_seleccionada" (volver_emit)="this.panel = 1">
+        <app-lista-articulo [numero_mesa]="this.numero_mesa" [id_categoria]="id_categoria_seleccionada" (volver_emit)="this.panel = 1">
         </app-lista-articulo>
     </div>
 </div>
