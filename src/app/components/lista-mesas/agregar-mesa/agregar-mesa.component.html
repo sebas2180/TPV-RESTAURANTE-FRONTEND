@@ -1,0 +1,27 @@
+<mat-card class="card">
+   <mat-card-title> 
+       Nueva mesa
+   </mat-card-title>
+   <mat-card-content class="content">
+       <form [formGroup]="this.form">
+        <mat-form-field class="numero" appearance="outline" name="numero"  >
+            <mat-label>numero mesa</mat-label>
+            <input matInput formControlName="numero" type="number" min="0"    name="numero">
+        </mat-form-field>
+
+        <!-- <mat-form-field class="salon" appearance="outline" name="salon">
+            <mat-label>Salon</mat-label>
+            <mat-select formControlName="salon"> 
+                <mat-option *ngFor="let salonn of this.lista_salones"  [value]="tipo"  >
+                    {{tipo}}</mat-option>      
+            </mat-select>
+            <mat-error *ngIf="this.form.get('salon')?.invalid ">Falta seleccionar salon</mat-error>       
+        </mat-form-field> -->
+    
+
+        <mat-card-footer>
+            <button mat-raised-button color="primary" (click)="onSubmit()">SIGUIENTE</button>
+        </mat-card-footer>
+       </form>
+   </mat-card-content>
+</mat-card>

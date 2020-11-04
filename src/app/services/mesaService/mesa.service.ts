@@ -13,7 +13,9 @@ export class MesaService {
 
 
   public getMesas() {
-
     return this.http.get<MesaModule[]>(`${environment.rutaBackEnd}mesa/listAll`)
+  }
+  public addMesa(mesa: MesaModule) {
+    return this.http.post(`${environment.rutaBackEnd}mesa/add`,mesa);
   }
 }

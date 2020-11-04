@@ -1,8 +1,11 @@
 
 <div class="item">
-    <h4>{{item.cantidad}}</h4><h4>{{item.articulo.title}}</h4><h4>{{item.articulo.price_neto}}</h4><h4>{{item.cantidad*item.articulo.price_neto | number:'1.1-5'}}</h4>
+    <h4>{{item.cantidad}}</h4>
+    <h4>{{item.articulo.categoria.iva.porcentaje /100| number:'1.1-5' }}</h4>
+    <h4>{{item.articulo.title}}</h4>
+    <h4>{{item.articulo.price_neto}}</h4>
+    <h4>{{item.cantidad*item.articulo.price_neto | number:'1.1-5'}}</h4>
 </div>
-<div class="iva">
+<!-- <div class="iva">
     <h4>Cuota iva: </h4><h4>{{item.articulo.categoria.iva.porcentaje /100| number:'1.1-5' }}</h4>
-</div>
-<p>                 --------           </p>
+</div> -->

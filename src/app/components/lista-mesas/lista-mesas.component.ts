@@ -8,6 +8,7 @@ import {  MesaModule} from '../../models/mesa/mesa.module'
 })
 export class ListaMesasComponent implements OnInit {
     mesas : MesaModule[];
+    panel : number = 1;
   constructor(private mesaService: MesaService) { }
 
   ngOnInit(): void {

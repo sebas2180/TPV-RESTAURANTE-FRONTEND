@@ -44,6 +44,7 @@ import { environment } from '../environments/environment';
 import { articulosReducer, State } from './stores/reducers/articulo.reducer';
 import { contReducer } from 'src/app/stores/reducers/contador.reducer';
 import { articulosEffects } from './stores/effects/articulo.effects';
+import { salonEffects } from './stores/effects/salon.effects';
 import { effects } from './stores/effects';
 import { GETArticulosSuccess, GET_ARTICULOS } from './stores/actions/articulo.actions';
 import { PiePaginaComponent } from './components/pie-pagina/pie-pagina.component';
@@ -61,6 +62,10 @@ import { AgregarArticuloComponent } from './components/articulo/agregar-articulo
 import { FacturaComponent } from './components/detalle-mesa/factura/factura.component';
 import { ItemComponent } from './components/detalle-mesa/factura/lista-items/item/item.component';
 import { ListaItemsComponent } from './components/detalle-mesa/factura/lista-items/lista-items.component';
+import { itemReducer } from './stores/reducers/item.reducer';
+import { AgregarMesaComponent } from './components/lista-mesas/agregar-mesa/agregar-mesa.component';
+import { salonReducer } from './stores/reducers/salonReducer.reducer';
+import { GET_SALONES } from './stores/actions/salon.actions';
  
  
 @NgModule({
@@ -87,7 +92,8 @@ import { ListaItemsComponent } from './components/detalle-mesa/factura/lista-ite
     AgregarArticuloComponent,
     FacturaComponent,
     ItemComponent,
-    ListaItemsComponent
+    ListaItemsComponent,
+    AgregarMesaComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -110,21 +116,21 @@ import { ListaItemsComponent } from './components/detalle-mesa/factura/lista-ite
     MatSelectModule,
     LayoutModule,
     MatListModule,
-    StoreModule.forRoot({categoria: categoriasReducer,count: contReducer,articulo : articulosReducer} as any, { runtimeChecks: { strictStateImmutability: true, strictActionImmutability: true } }),
+    StoreModule.forRoot({categoria: categoriasReducer,count: contReducer,articulo : articulosReducer, item : itemReducer,salon: salonReducer} as any, { runtimeChecks: { strictStateImmutability: true, strictActionImmutability: true } }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot( [articulosEffects,categoriaEffects] )
+    EffectsModule.forRoot( [articulosEffects,categoriaEffects,salonEffects] )
   ],
   providers: [ ArticuloService, UsuarioService, CanActivateService,
-    //{
-      // provide: APP_INITIALIZER,
-      // useFactory: (store: Store<State>) => {
-      //   return () => {
-      //     store.dispatch(new GET_ARTICULOS());
-      //   };
-      // },
-      // multi: true,
-      // deps: [Store]
-    //}
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (store: Store<State>) => {
+        return () => {
+          store.dispatch(new GET_SALONES());
+        };
+      },
+      multi: true,
+      deps: [Store]
+    }
   ],
   bootstrap: [AppComponent]
 })

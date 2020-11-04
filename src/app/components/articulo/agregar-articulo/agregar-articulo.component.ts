@@ -1,10 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { ArticuloModule } from 'src/app/models/articulo/articulo.module';
 import { ItemModule } from 'src/app/models/item/item.module';
 import { MesaModule } from 'src/app/models/mesa/mesa.module';
 import { ItemService } from 'src/app/services/itemService/item.service';
+
 import  Swal  from 'sweetalert2';
+import { DECREMENT_ITEM,INCREMENT_ITEM} from '../../../stores/actions/items.actions';
 
 @Component({
   selector: 'app-agregar-articulo',
@@ -17,7 +20,7 @@ export class AgregarArticuloComponent implements OnInit {
   @Output() cambiar_panel = new EventEmitter();
   form: FormGroup;
   mesa : MesaModule ;
-  constructor( private itemService: ItemService) { }
+  constructor( private itemService: ItemService, private store : Store) { }
 
   ngOnInit(): void {
     this.mesa = new MesaModule;
@@ -53,6 +56,7 @@ export class AgregarArticuloComponent implements OnInit {
       
       this.itemService.add(item).subscribe(
         res => {
+          this.store.dispatch(new INCREMENT_ITEM())
           if(res['status'] == 200)  {
             Swal.fire({
               icon: 'success',

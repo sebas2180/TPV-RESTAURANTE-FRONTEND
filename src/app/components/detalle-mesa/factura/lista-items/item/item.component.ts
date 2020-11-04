@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { ItemModule } from 'src/app/models/item/item.module';
+import { INCREMENT_ITEM } from 'src/app/stores/actions/items.actions';
 
 @Component({
   selector: 'app-item',
@@ -9,10 +11,10 @@ import { ItemModule } from 'src/app/models/item/item.module';
 export class ItemComponent implements OnInit {
 
   @Input() item : ItemModule;
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
-    console.log(this.item)
+    //this.store.dispatch(new INCREMENT_ITEM());
   }
 
 }

@@ -14,7 +14,10 @@
 button{
     width: 50%;
 }
-
+.content {
+    overflow-y: scroll;
+    max-height: 500px;
+}
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 320px) { 
  }

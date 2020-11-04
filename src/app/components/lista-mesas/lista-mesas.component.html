@@ -1,15 +1,28 @@
- 
-<mat-card class="card-title">
-    <mat-card-content class="card-content">
-        <h2>MESAS ABIERTAS</h2>
-    </mat-card-content>
-</mat-card>
-
-<div class="row">
-    <div *ngFor="let mesa  of this.mesas">
-        <div class="mesa col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            <mesa  [mesa] = "mesa">
-            </mesa>  
-        </div>               
-    </div> 
+<div class="principal">
+    <mat-card class="card-title">
+        <mat-card-content class="card-content">
+            <h2>MESAS ABIERTAS</h2>
+        </mat-card-content>
+    </mat-card>
+    
+    <div class="lista card" >
+        <div class="row"  *ngFor="let mesa  of this.mesas">
+            <div class="mesa col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                <mesa  [mesa] = "mesa">
+                </mesa>  
+            </div>               
+        </div> 
+    </div>
+    <button mat-stroked-button
+            color="primary" 
+            class="button" 
+            (click)="this.panel = 2"  
+            *ngIf="this.panel == 1">
+            NUEVA MESA
+    </button>
+    <div class="div_agregar_mesa">
+        <app-agregar-mesa *ngIf="this.panel == 2">
+    
+        </app-agregar-mesa>
+    </div>
 </div>
